@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `projects` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `title` varchar(100) DEFAULT NULL,
   `content` text NOT NULL,
   `url` varchar(100) NOT NULL,
@@ -36,9 +36,30 @@ CREATE TABLE `projects` (
   `photo` longblob
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `orders` (
+  `id` int(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  `scrip` varchar(100) DEFAULT NULL,
+  `quantity` int(20) NOT NULL,
+  `price` int(10) NOT NULL,
+  `action` enum('buy','sell') DEFAULT NULL,
+  `type` enum('intraday','delivery') DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Dumping data for table `projects`
 --
+INSERT INTO `orders` (`id`, `scrip`, `quantity`, `price`,`action`, `type`, `date`) VALUES
+(1,'AAPL','10','100','buy','intraday','2023-07-10'),
+(2,'AAPL','33','101','sell','intraday','2023-07-10'),
+(3,'TESLA','33','300','buy','delivery','2023-07-20'),
+(4,'NETFLIX','500','30','sell','intraday','2023-07-11'),
+(5,'MFT','1000','40','buy','delivery','2023-07-10')
+
+
+
+
 
 INSERT INTO `projects` (`id`, `title`, `content`, `url`, `type`, `date`, `photo`) VALUES
 (1, 'Project One', '<p>Cras sed erat varius, ornare odio non, mattis ex. Aliquam aliquam, enim et dapibus tristique, lorem massa auctor diam, vel euismod tellus massa mollis arcu. Ut in maximus quam. Nulla nec dui nulla. Donec a efficitur quam. Morbi hendrerit ipsum quam, eu aliquet nunc gravida ut. Suspendisse posuere, mauris vel placerat eleifend, arcu dui hendrerit ex, vitae consequat ante tellus finibus lorem. Sed in interdum lectus.</p>', 'https://codeadam.ca', 'Website', '2020-11-01', NULL),
@@ -51,7 +72,7 @@ INSERT INTO `projects` (`id`, `title`, `content`, `url`, `type`, `date`, `photo`
 --
 
 CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `first` varchar(25) DEFAULT NULL,
   `last` varchar(25) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,

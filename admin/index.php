@@ -3,7 +3,7 @@
 include( 'includes/database.php' );
 include( 'includes/config.php' );
 include( 'includes/functions.php' );
-
+include( 'users_add.php' );
 if( isset( $_POST['email'] ) )
 {
   
@@ -60,6 +60,8 @@ include( 'includes/header.php' );
     <input type="submit" value="Login">
 
   </form>
+  <p>New User, You can register here! </p>
+  <p><a href="users_add.php"><i class="fas fa-plus-square"></i>Register</a></p> 
   
 </div>
 
