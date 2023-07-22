@@ -84,14 +84,6 @@ include( 'includes/header.php' );
   
   <br>
 
-  
- 
-  
-  <label for="url">URL:</label>
-  <input type="text" name="url" id="url" value="<?php echo htmlentities( $record['url'] ); ?>">
-    
-  <br>
-  
   <label for="date">Date:</label>
   <input type="date" name="date" id="date" value="<?php echo htmlentities( $record['date'] ); ?>">
     

@@ -1,10 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  
+  <title>Website Admin</title>
+  
+  <link href="styles.css" type="text/css" rel="stylesheet">
+  
+  <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
+  
+</head>
+
 <?php
 
 include( 'includes/database.php' );
 include( 'includes/config.php' );
 include( 'includes/functions.php' );
 
-secure();
+//secure();
 
 if( isset( $_POST['first'] ) )
 {
@@ -38,14 +53,24 @@ if( isset( $_POST['first'] ) )
   die();
   */
 
-  header( 'Location: users.php' );
+  header( 'Location: index.php' );
   die();
   
 }
 
-include( 'includes/header.php' );
+//include( 'includes/header.php' );
 
 ?>
+
+<body>
+  
+  <h1>Register Page</h1>
+  
+    <hr>
+  
+  <?php echo get_message(); ?>
+  
+  <div style="max-width: 1500px; margin: auto; padding: 0 1%;">
 
 <h2>Add User</h2>
 

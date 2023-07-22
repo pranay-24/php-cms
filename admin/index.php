@@ -3,7 +3,7 @@
 include( 'includes/database.php' );
 include( 'includes/config.php' );
 include( 'includes/functions.php' );
-include( 'users_add.php' );
+
 if( isset( $_POST['email'] ) )
 {
   
@@ -42,6 +42,13 @@ if( isset( $_POST['email'] ) )
 include( 'includes/header.php' );
 
 ?>
+<?php
+// Handle the link click and redirect to register.php
+if (isset($_GET['register_link'])) {
+    header('Location: register.php');
+    exit(); // Make sure to include an exit() after the header() function to stop further script execution
+}
+?>
 
 <div style="max-width: 400px; margin:auto">
 
@@ -60,9 +67,8 @@ include( 'includes/header.php' );
     <input type="submit" value="Login">
 
   </form>
-  <p>New User, You can register here! </p>
-  <p><a href="users_add.php"><i class="fas fa-plus-square"></i>Register</a></p> 
-  
+ 
+  <a href="?register_link=true">Click here to register</a>
 </div>
 
 <?php

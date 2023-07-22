@@ -34,7 +34,7 @@ $result = mysqli_query( $connect, $query );
 
 <table>
   <tr>
-    <th></th>
+    
     <th align="center">ID</th>
     <th align="left">Scrip</th>
     <th align="center">Qty</th>
@@ -42,6 +42,8 @@ $result = mysqli_query( $connect, $query );
     <th align="center">Action</th>
     <th align="center">Type</th>
     <th align="center">Date</th>
+    <th align="center">Edit</th>
+    <th align="center">Delete</th>
   </tr>
   <?php while( $record = mysqli_fetch_assoc( $result ) ): ?>
     <tr>
@@ -52,7 +54,9 @@ $result = mysqli_query( $connect, $query );
       <td align="center"><?php echo $record['action']; ?></td>
       <td align="center"><?php echo $record['type']; ?></td>
       <td align="center"><?php echo $record['date']; ?></td>
-    
+      <td align="center"><a href="orders_edit.php?id=<?php echo $record['id']; ?>">Edit</a></td>
+      <td align="center"><a href="orders.php?delete=<?php echo $record['id']; ?>" onclick="javascript:confirm('Are you sure you want to delete this user?');">Delete</a></td>
+      
     </tr>
   <?php endwhile; ?>
 </table>
