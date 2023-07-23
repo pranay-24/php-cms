@@ -16,11 +16,11 @@ include( 'includes/header.php' );
       Manage Orders
     </a>
   </li>
-  <li>
+  <!-- <li>
     <a href="users.php">
       Manage Users
     </a>
-  </li>
+  </li> -->
   <li>
     <a href="logout.php">
       Logout

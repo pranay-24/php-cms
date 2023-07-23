@@ -2,10 +2,10 @@
 a:link,
 a:active,
 a:hover,
-a:visited {
+/* a:visited {
   text-decoration: none;
   color: #FF8500;
-}
+} */
 
 table {
   width: 100%;
@@ -72,7 +72,7 @@ input {
 
 input[type=submit] {
   border: 0;
-  background-color: #eb741d;
+  background-color: #4564e3;
   color: #fff;
   padding: 10px 10px;
   font-size: 110%;
@@ -91,7 +91,7 @@ input[type=submit] {
   color: #fff;
 }
 #dashboard li {
-  background-color: #eb741d;
+  background-color: #94cde4;
   display: inline-block;
   width: 22%;
   margin: 1%;
@@ -105,3 +105,6 @@ input[type=submit] {
 #dashboard i {
   margin-bottom: 5px;
 }
+
+
+
