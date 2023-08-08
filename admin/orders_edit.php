@@ -30,7 +30,7 @@ if( isset( $_POST['scrip'] ) )
       LIMIT 1';
     mysqli_query( $connect, $query );
     
-    set_message( 'Oredr has been updated' );
+    set_message( 'Order has been updated' );
     
   
 
